@@ -13,5 +13,5 @@ In 2056, you will be 56 years old!
 """
 print("enter your age")
 age = int(input())
-finalage = age + 31
-print("your age in 2056 will be" + finalage)
+finalage = str(age + 31)
+print("your age in 2056 will be " + finalage)
