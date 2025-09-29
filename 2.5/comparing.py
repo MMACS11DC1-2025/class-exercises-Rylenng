@@ -10,18 +10,22 @@ Test as you go! Describe in your comments what steps you took to test your code.
 #rylen ng
 #sept 26
 answer = input()
+#getting data from the file
 file = open("2.4/responses.csv")
 junk = file.readline()
 
+#describing variables
 basketball = 0
 hockey = 0
 baseball = 0
+volleyball = 0
 
 for data in file:
 
     datalist = data.split(",")
 
-print(datalist[4])
+#datalists
+    print(datalist[4])
 
 if answer == "basketball":
     basketball += 1
@@ -29,7 +33,10 @@ elif answer == "baseball":
     baseball += 1
 elif answer == "hockey":
     hockey += 1
+elif answer == "volleyball":
+    volleyball += 1
 
 print("basketball: " + str(basketball))
 print("hockey: " + str(hockey))
 print("baseball: " + str(baseball))
+print("volleyball: " + str(volleyball))
