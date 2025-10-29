@@ -102,3 +102,53 @@ You'll create a fractal generator that can draw at least one recursive pattern (
 3. Document your process as you go - this will help with the README
 4. Think about edge cases - what happens when parameters are 0 or negative?
 5. Don't forget to include peer review in your final submission
+
+
+import turtle
+
+turtle = turtle.Turtle()
+
+def drawTree(level, branchLength):
+  if level > 0:
+    turtle.forward(branchLength)
+    turtle.left(120)
+    drawTree(level-1, branchLength/1.7)
+    
+    
+    turtle.right(240)
+    drawTree(level-1, branchLength/1.7)
+    
+    turtle.right(120)
+    drawTree(level-1, branchLength/1.7)
+    
+    turtle.left(240)
+    drawTree(level-1, branchLength/1.7)
+    
+    turtle.right(60)
+    drawTree(level-1, branchLength/1.7)
+    
+    turtle.left(120)
+    drawTree(level-1, branchLength/1.7)
+    
+    turtle.left(60)
+    drawTree(level-1, branchLength/1.7)
+    
+    
+    turtle.right(120)
+    drawTree(level-1, branchLength/1.7)
+    turtle.back(branchLength)
+  else:
+    turtle.color("green")
+    turtle.stamp()
+    turtle.color("green")
+turtle.speed(0)
+turtle.penup()
+turtle.goto(0, -180)
+turtle.left(90)
+turtle.pendown()
+
+turtle.color("brown")
+turtle.width(1)
+turtle.shape("triangle")
+levels = input("How many levels do you want me to draw? ")
+drawTree(int(levels), 120)
