@@ -8,3 +8,25 @@ exercises to include calculations, if you wish.
 Remember to design your algorithm in English first, then translate it to Python 
 code. Test as you go!
 """
+#calculator
+#Rylen Ng
+#Date: sept 22
+print("Hello i am a calculator")
+print("ask a simple math question here (2+2)")
+print("put your first whole number here")
+first = float(input())
+print("put your operation style (+-/*)")
+operation = float(.strip(input()))
+print("put your second whole number here")
+second = float(input())
+
+match operation
+    case "+":
+        answer = float(first) + float(second)
+    case "-":
+        answer = float(first) - float(second)
+    case "/":
+        answer = float(first) / float(second)
+    case "*":
+        answer = float(first) * float(second)
+    print(answer)
