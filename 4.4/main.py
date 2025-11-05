@@ -1,5 +1,4 @@
 import turtle
-
 turtle = turtle.Turtle()                     #creates turtle object
 
 def drawTree(level, branchLength):           #defines the function
