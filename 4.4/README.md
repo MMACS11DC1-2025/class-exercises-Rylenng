@@ -1,4 +1,4 @@
-# Fractal Tree Project 🌳
+# Fractal Tree Project 
 
 ## Overview
 This project draws a fractal tree using Python’s turtle graphics module.  
