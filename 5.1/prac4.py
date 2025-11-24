@@ -1,30 +1,49 @@
 from PIL import Image
 
-def is_yellow(r, g, b):
+def colour(r, g, b):
+    colours = {
+        (1, 0, 0): "red",
+        (0, 1, 0): "green",
+        (0, 0, 1): "blue",
+        (1, 1, 0): "yellow",
+        (1, 0, 1): "magenta",
+        (0, 1, 1): "cyan",
+        (1, 1, 1): "white",
+        (0, 0, 0): "black"
+    }
+    
+    colourlist = [0,0,0]
+    if 170<=r<=255:
+        colourlist[0] = 1
+    
+    if 100<=g<=255:
+        colourlist[1] = 1
 
-    if r > 150 and g > 150 and b < 150:
-        return "yellow" 
-    else:
-        return "not yellow"
+    if 170<=b<=255:
+        colourlist[2] = 1
 
-white_pixel = (150, 150, 150)
+    for colours in colours:
+        if tuple(colourlist) == colours:
+            return colours[colours]
+    return "unknown"
 
-
-
-
-
-my_image = Image.open("5.1/jelly_beans.jpg").load()
-output_large = Image.open("5.1/jelly_beans.jpg")
+file = Image.open("5.1/jelly_beans.jpg")
+jbimg= file.load()
 
 
+width = file.width
+height = file.height
 
 
+for i in range(colour):
+    for x in range(width):
+        for y in range(height):
+            r,g,b = jbimg[x,y]
 
-width = output_large.width
-height = output_large.height
-for i in range(width):
-    for j in range(height):
-        if is_yellow(my_image[i, j][0], my_image[i, j][1], my_image[i, j][2]) == "yellow":
-            xy = (i, j)
-            output_large.putpixel(xy, (255, 255, 255))
-output_large.save("jellybeans_output.png", "png")
+            if r > 210 and r < 250 and g > 150 and b < 100:
+                yellow_pixel += 1
+            if r > 170 and r < 150 and g > 10 and g < 20 and b > 10 and b < 0:
+                red_pixel += 1
+print(yellow_pixel)
+print(red_pixel)
+print(width * height)
