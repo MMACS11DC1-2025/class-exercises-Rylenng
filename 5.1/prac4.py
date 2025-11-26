@@ -1,6 +1,7 @@
 from PIL import Image
 
 def colour(r, g, b):
+
     colours = {
         (1, 0, 0): "red",
         (0, 1, 0): "green",
