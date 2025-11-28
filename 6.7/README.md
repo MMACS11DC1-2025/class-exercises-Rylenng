@@ -1,0 +1,6 @@
+# Theme detection
+```- [ ] Choose a specific theme for which you will be scanning multiple images (3 pts)
+    Mountains
+- [ ] Clearly define the visual feature your program will detect and count (2 pts)
+    detect and count how many white pixels
+- [ ] Justify your feature detection with an explanation of how your chosen feature can be accurately identified (3 pts)
