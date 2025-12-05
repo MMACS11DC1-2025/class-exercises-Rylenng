@@ -60,6 +60,5 @@ time_taken = end_time - start_time
 
 print("Dead Grass Scores:")
 for item in results:
-    print(item[0], "→", round(item[1], 3))
-
+    print(item[0], "=", round(item[1], 3))
 print("\nTime taken:", round(time_taken, 3), "seconds")
