@@ -4,8 +4,6 @@ import time
 
 def is_dead_grass(pixel):
     r, g, b = pixel
-
-
     if r > 120 and g > 90 and b < 90:
         return True
     else:
@@ -61,4 +59,4 @@ time_taken = end_time - start_time
 print("Dead Grass Scores:")
 for item in results:
     print(item[0], "=", round(item[1], 3))
-print("\nTime taken:", round(time_taken, 3), "seconds")
+print("\n Time taken:", round(time_taken, 3), "seconds")
