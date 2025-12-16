@@ -55,8 +55,17 @@ for image in image_files:
 end_time = time.time()
 time_taken = end_time - start_time
 
+for i in range(len(results) - 1):
+    for j in range(i + 1, len(results)):
+        if results[i][1] < results[j][1]:
+            results[i], results[j] = results[j], results[i]
+
+
+        
+ 
+
 
 print("Dead Grass Scores:")
-for item in results:
-    print(item[0], "=", round(item[1], 3))
+for item in range(min(5, len(results))):
+    print(results[item][0], "=", round(results[item][1], 3))
 print("\n Time taken:", round(time_taken, 3), "seconds")
