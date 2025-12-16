@@ -60,10 +60,48 @@ for i in range(len(results) - 1):
         if results[i][1] < results[j][1]:
             results[i], results[j] = results[j], results[i]
 
+def search_start_index(results, target_score):
+    low = 0
+    high = len(results) - 1
 
-        
+    while low <= high:
+        mid = int((low + high) / 2)
+        if results[mid][0] < target_score:
+            return results[mid][1]
+
+        elif results[mid][0] > target_score:
+            low = mid + 1
+        else:
+            return results[mid][1]
+
+    return -1
+
+query = input("\nEnter grass % to look for (or skip)")
+if query != "":
+    target = float(query) / 10
+    first = 0
+    last = len(results) - 1
+    tot = 0.01
+    found = False
+
+    while first <= last:
+        mid = (first + last) // 2
+        mid_value = results[mid][1]
+
+        if abs(mid_value - target) <= tot:
+            print(f"Found image: " + results[mid][0] + "=" + str(round(results[mid][1], 2)) + "%")
+            found = True
+            break
+        elif mid_value < target:
+            last = mid - 1
+        else:
+            first = mid + 1
+
+        if not found:
+            print("No image found with that grass percentage.")
+
+
  
-
 
 print("Dead Grass Scores:")
 for item in range(min(5, len(results))):
