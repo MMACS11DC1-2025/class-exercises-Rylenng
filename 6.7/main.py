@@ -97,7 +97,7 @@ if query != "":
         else:
             first = mid + 1
 
-        if not found:
+        if found == True:
             print("No image found with that grass percentage.")
 
 
